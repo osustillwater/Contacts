@@ -1,0 +1,39 @@
+﻿
+@model Contacts.Models.Info
+@{
+    ViewData["Title"] = "Create";
+    <h3><strong>@TempData["Message"]</strong></h3>
+}
+
+<br />
+<h2 class="text-info">Add New Contact</h2>
+<form method="post" action="Create">
+    <div class="form-group row">
+        <div class="col-3">
+            <label asp-for="Name"></label>
+        </div>
+        <div class="col-7 mb-2">
+            <input asp-for="Name" class="form-control" />
+             <span asp-validation-for="Name" class="text-danger"></span>
+        </div> 
+        <div class="col-3">
+            <label asp-for="Contact"></label>
+        </div>
+        <div class="col-7 mb-2">
+            <input asp-for="Contact" class="form-control" />
+             <span asp-validation-for="Contact" class="text-danger"></span>
+        </div>
+        <div class="col-3">
+            <label asp-for="Email"></label>
+        </div>
+        <div class="col-7 mb-2">
+            <input asp-for="Email" class="form-control" />
+             <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group col-4 mt-4">
+            <button type="submit" class="btn btn-primary"> Add</button>
+            <a asp-action="Index" class="btn btn-success">Back</a>
+        </div>
+    </div>
+</form>
+

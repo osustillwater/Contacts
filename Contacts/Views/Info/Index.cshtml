@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<Contacts.Models.Info>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br /></br />
+
+<div class="row">
+    <div class="col-5">
+        <h2 class="text-info">Contacts</h2>
+    </div>
+    <div class="col-5 text-end">
+        <a asp-controller="Info" asp-action="Create" class="btn btn-primary">
+                <i class="fa-solid fa-person-biking"></i> &nbsp; Add New Contact </a>      
+    </div>
+    <br />
+    <div class="col-10">
+        <table class="table table-striped border" >
+            <tr class="table-info">
+                <th>
+                     Name
+                </th>
+                <th>
+                     Contact
+                </th>
+                <th>
+                     Email
+                </th>
+                <th class="text-end">Actions</th>
+            </tr>
+            @foreach(var item in Model)
+            {
+                <tr>
+                  <td>
+                       <h5>@item.Name</h5> 
+                  </td>
+                  <td>
+                       <h5>@item.Contact</h5> 
+                  </td>
+                  <td>
+                       <h5>@item.Email</h5> 
+                  </td>
+                
+                  <partial name="_TableButtons" model="item.Id" />
+              </tr>
+            }
+
+        </table>
+    </div>
+</div>
